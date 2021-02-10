@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useContext, createContext } from 'react'
 import { connectToDatabase } from '../util/mongodb'
 
 export default function Home({ allProducts }) {
@@ -16,15 +17,19 @@ export default function Home({ allProducts }) {
 
         <div className="uk-child-width-1-3" uk-grid="true">
           {allProducts.map(product => {
-            return <div>
-              <div className="uk-card">
-                <div className="uk-card-media-top">
-                    <img src={product.featuredImage} alt=""/>
+            return <div key={product.id}>
+              <a className="uk-link-toggle" href={'./products/' + product.id}>
+                <div>
+                  <div className="uk-card">
+                    <div className="uk-card-media-top">
+                        <img src={product.featuredImage} alt=""/>
+                    </div>
+                    <div className="uk-card-body">
+                      <h3>{product.name}</h3>
+                    </div>
+                  </div>
                 </div>
-                <div className="uk-card-body">
-                  <h3>{product.name}</h3>
-                </div>
-              </div>
+              </a>
             </div>
           })}
         </div>
@@ -60,14 +65,21 @@ export async function getServerSideProps(context) {
 
   // const isConnected = await client.isConnected()
 
-  const data = await db.collection('products').find().sort({id: 1}).limit(40).toArray()
+  const data = await db.collection('products').find().sort({id: 1}).limit(100).toArray()
   const allProducts = data.map(item => {
-    console.log(item.pics[1])
     return {
+      id: item._id,
       name: item.name,
       featuredImage: item.pics[1],
     }
   })
+
+  if(allProducts !== []){
+    const allProductsContext = createContext(allProducts)
+    console.log('allProductsContext', allProductsContext)
+  }else{
+
+  }
 
   return {
     props: { allProducts },
