@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Navbar from '../components/navbar'
 import { useContext, createContext } from 'react'
 import { connectToDatabase } from '../util/mongodb'
 
@@ -14,6 +15,7 @@ export default function Home({ allProducts }) {
       </Head>
 
       <main>
+        <Navbar />
 
         <div className="uk-child-width-1-3" uk-grid="true">
           {allProducts.map(product => {

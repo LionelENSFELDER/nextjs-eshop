@@ -27,7 +27,7 @@ export default function Product({ product }){
                     {product &&
                         <div>
                             <img src={product.pics[1]} alt=""/>
-                            Nomm: {product.name}, type: {product.type}
+                            Nom: {product.name}, type: {product.type}
                         </div>
                     }
                 </div>
