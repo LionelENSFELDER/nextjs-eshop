@@ -1,14 +1,18 @@
-html,
-body {
+* {
+  box-sizing: border-box;
+}
+html,body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
-  background-color: darkslategrey;
+  background-color: #FFF;
   color: #373940 !important;
 }
-
-* {
-  box-sizing: border-box;
+.uk-navbar-container:not(.uk-navbar-transparent){
+  background-color: #FFF !important;
+}
+.uk-offcanvas-bar a{
+  color: #373940 !important;
 }
