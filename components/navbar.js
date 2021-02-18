@@ -27,8 +27,8 @@ export default function Navbar(){
                     <div id="offcanvas-slide" uk-offcanvas="overlay: true">
                       <div className="uk-offcanvas-bar uk-background-default">
 
-                        <a className="uk-align-right" uk-close>
-                        <i class="las la-times la-2x"></i>
+                        <a className="uk-align-right" uk-close="true">
+                          <i className="las la-times la-2x"></i>
                         </a>
 
                         <ul className="uk-list">
