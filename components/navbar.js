@@ -18,16 +18,17 @@ export default function Navbar(){
 
 							<div className="uk-navbar-right uk-text-bold">
 
+                {/* mobile menu */}
                 <ul className="uk-navbar-nav uk-align-left uk-hidden@m">
                   <li>
                     <a className="uk-navbar-item uk-logo" uk-toggle="target: #offcanvas-slide">
-                      <i className="fas fa-bars fa-2x"></i>
+                      <i className="las la-bars la-3x"></i>
                     </a>
                     <div id="offcanvas-slide" uk-offcanvas="overlay: true">
                       <div className="uk-offcanvas-bar uk-background-default">
 
                         <a className="uk-align-right" uk-close>
-                          <i className="fas fa-times"></i>
+                        <i class="las la-times la-2x"></i>
                         </a>
 
                         <ul className="uk-list">
@@ -43,14 +44,15 @@ export default function Navbar(){
                             </div>
                           </li>
                           <li><a href="#">CONTACT</a></li>
-                          <li><a href="#"><i className="fas fa-user fa-lg uk-margin-small-right"></i>LOGIN</a></li>
-                          <li><a href="#"><i className="fas fa-shopping-cart fa-lg uk-margin-small-right"></i>PANIER</a></li>
+                          <li><a href="#"><i className="las la-user la-2x"></i>LOGIN</a></li>
+                          <li><a href="#"><i className="las la-shopping-cart la-2x"></i>PANIER</a></li>
                         </ul>
                       </div>
                     </div>
                   </li>
 								</ul>
 
+                {/* desktop menu */}
 								<ul className="uk-navbar-nav uk-visible@m">
 									<li><a href="/">HOME</a></li>
 									<li><a href="#">A PROPOS</a></li>
@@ -64,8 +66,8 @@ export default function Navbar(){
                     </div>
                   </li>
 									<li><a href="#">CONTACT</a></li>
-									<li><a href="#"><i className="fas fa-user fa-lg uk-margin-small-right"></i>LOGIN</a></li>
-                  <li><a href="#"><i className="fas fa-shopping-cart fa-lg uk-margin-small-right"></i>PANIER</a></li>
+									<li><a href="#"><i className="las la-user la-2x"></i>LOGIN</a></li>
+                  <li><a href="#"><i className="las la-shopping-cart la-2x"></i>PANIER</a></li>
                 </ul>
 
 							</div>

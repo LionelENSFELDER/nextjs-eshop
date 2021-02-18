@@ -9,6 +9,7 @@ html,body {
     sans-serif;
   background-color: #FFF;
   color: #373940 !important;
+  font-weight: bold !important;
 }
 .uk-navbar-container:not(.uk-navbar-transparent){
   background-color: #FFF !important;

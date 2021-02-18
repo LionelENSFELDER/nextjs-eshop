@@ -6,30 +6,24 @@ import { connectToDatabase } from '../util/mongodb'
 export default function Home({ allProducts }) {
   return (
     <div className="uk-container">
-      {/* <Head>
-        <title>Lezarlando</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/css/uikit.min.css" />
-        <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit-icons.min.js"></script>
-      </Head> */}
 
       <CustomHead />
 
       <main>
         <Navbar />
 
-        <div className="uk-child-width-1-3" uk-grid="true">
+        <div className="uk-child-width-1-4" uk-grid="true">
           {allProducts.map(product => {
             return <div key={product.id}>
               <a className="uk-link-toggle" href={'./products/' + product.id}>
                 <div>
                   <div className="uk-card">
                     <div className="uk-card-media-top">
-                        <img src={product.featuredImage} alt=""/>
+                        <img className="uk-width-1-1" src={product.featuredImage} alt=""/>
                     </div>
-                    <div className="uk-card-body">
-                      <h3>{product.name}</h3>
+                    <div className="uk-card-body uk-padding-remove-horizontal">
+                      <p className="uk-align-right">{product.name}</p>
+                      <p className="uk-align-right">{product.brand}</p>
                     </div>
                   </div>
                 </div>
@@ -47,18 +41,7 @@ export default function Home({ allProducts }) {
       `}</style>
 
       <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
+        
       `}</style>
     </div>
   )
@@ -74,6 +57,7 @@ export async function getServerSideProps(context) {
     return {
       id: item._id,
       name: item.name,
+      brand: item.brand,
       featuredImage: item.pics[1],
     }
   })
