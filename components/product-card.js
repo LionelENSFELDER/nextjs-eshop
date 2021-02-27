@@ -22,8 +22,8 @@ export default function ProductCard({ product }){
                   <i className="las la-star"></i>
                   <i className="las la-star-half"></i>
                 </div>
-                <a className="" href="">
-                  <i className="las la-plus-square la-2x"></i>
+                <a className="link-add-to-wishlist" href="">
+                  <i className="las la-plus-circle la-2x"></i>
                 </a>
               </div>
             </div>

@@ -17,3 +17,6 @@ html,body {
 .uk-offcanvas-bar a{
   color: #373940 !important;
 }
+.link-add-to-wishlist > .la-plus-circle{
+  color: #373940 !important;
+}
