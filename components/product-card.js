@@ -1,17 +1,10 @@
 import Link from 'next/link'
-import { useContext} from 'react'
-import {CartContext} from '../contexts/cart'
+import { useContext, useState} from 'react'
+import Context from '../contexts/context'
 
 export default function ProductCard({ product }){
-  const item = product;
-  const cartState = useContext(CartContext);
-  const { dispatch } = cartState;
-  const addToCart = (product)=>{
-    dispatch({ 
-      type: 'addProduct', 
-      productToAdd: product
-    })
-  }
+
+  const {cart, actions} = useContext(Context)
 
   return(
     <div>
@@ -42,7 +35,7 @@ export default function ProductCard({ product }){
         </a>
       </Link>
       <div>
-        <button type="button" className="btn btn-warning" onClick={() => addToCart(product)}>Add to cart</button>
+        <button type="button" className="btn btn-warning" onClick={() => actions( {type: "addToCard", payload: product} ) }>Add to cart</button>
       </div>
 </div>
   )
