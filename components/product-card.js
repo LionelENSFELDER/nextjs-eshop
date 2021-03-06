@@ -1,7 +1,18 @@
 import Link from 'next/link'
+import { useContext} from 'react'
+import {CartContext} from '../contexts/cart'
 
 export default function ProductCard({ product }){
-  console.log(product);
+  const item = product;
+  const cartState = useContext(CartContext);
+  const { dispatch } = cartState;
+  const addToCart = (product)=>{
+    dispatch({ 
+      type: 'addProduct', 
+      productToAdd: product
+    })
+  }
+
   return(
     <div>
       <Link href={'/products/' + product.id}>
@@ -30,6 +41,9 @@ export default function ProductCard({ product }){
           </div>
         </a>
       </Link>
-    </div>
+      <div>
+        <button type="button" className="btn btn-warning" onClick={() => addToCart(product)}>Add to cart</button>
+      </div>
+</div>
   )
 }

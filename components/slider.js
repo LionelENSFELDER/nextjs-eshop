@@ -14,8 +14,8 @@ export default function Slider(props){
           {slidesItems}
         </ul>
 
-        <a className="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous="true" uk-slideshow-item="previous"><i class="las la-chevron-left uk-text-large"></i></a>
-        <a className="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next="true" uk-slideshow-item="next"><i class="las la-chevron-right uk-text-large"></i></a>
+        <a className="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous="true" uk-slideshow-item="previous"><i className="las la-chevron-left uk-text-large"></i></a>
+        <a className="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next="true" uk-slideshow-item="next"><i className="las la-chevron-right uk-text-large"></i></a>
 
       </div>
 

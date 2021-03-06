@@ -1,7 +1,7 @@
 /*! UIkit 3.6.16 | https://www.getuikit.com | (c) 2014 - 2021 YOOtheme | MIT License */
 
 (function (global, factory) {
-    console.log('uikit.js load !!!')
+    // console.log('uikit.js load !!!')
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define('uikit', factory) :
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.UIkit = factory());
