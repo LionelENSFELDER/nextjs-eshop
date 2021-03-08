@@ -4,15 +4,15 @@ import '../util/uikit.js'
 import '../util/uikit-icons.js'
 
 import cartState from '../contexts/cart'
-import Context from '../contexts/context'
+import cartContext from '../contexts/context'
 
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
-  const cart = cartState();
+  const globalCartState = cartState();
   return (
-    <Context.Provider value={cart}>
+    <cartContext.Provider value={globalCartState}>
       <Component {...pageProps} />
-    </Context.Provider>
+    </cartContext.Provider>
   )
 }

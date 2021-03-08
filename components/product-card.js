@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import { useContext, useState} from 'react'
-import Context from '../contexts/context'
+import cartContext from '../contexts/context'
 
 export default function ProductCard({ product }){
 
-  const {cart, actions} = useContext(Context)
+  const {cart, actions} = useContext(cartContext)
 
   return(
     <div>
@@ -36,6 +36,7 @@ export default function ProductCard({ product }){
       </Link>
       <div>
         <button type="button" className="btn btn-warning" onClick={() => actions( {type: "addToCard", payload: product} ) }>Add to cart</button>
+        <button type="button" className="btn btn-warning" onClick={() => actions( {type: "deleteFromCard", payload: product} ) }>Delete to cart</button>
       </div>
 </div>
   )
