@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useContext, useState} from 'react'
+import { useContext} from 'react'
 import cartContext from '../contexts/context'
 
 export default function ProductCard({ product }){
@@ -8,12 +8,12 @@ export default function ProductCard({ product }){
 
   return(
     <div>
-      <Link href={'/products/' + product.id}>
+      <Link href={'/products/' + product._id}>
         <a className="uk-link-toggle">
           <div>
             <div className="uk-card">
               <div className="uk-card-media-top">
-                  <img className="uk-width-1-1" src={product.featuredImage} alt=""/>
+                  <img className="uk-width-1-1" src={product.pics[1]} alt="" />
               </div>
               <div className="uk-card-body uk-padding-small uk-padding-remove-horizontal">
                 <div className="uk-display-block">{product.name}</div>
@@ -36,7 +36,7 @@ export default function ProductCard({ product }){
       </Link>
       <div>
         <button type="button" className="btn btn-warning" onClick={() => actions( {type: "addToCard", payload: product} ) }>Add to cart</button>
-        <button type="button" className="btn btn-warning" onClick={() => actions( {type: "deleteFromCard", payload: product} ) }>Delete to cart</button>
+        <button type="button" className="btn btn-warning" onClick={() => actions( {type: "deleteFromCard", payload: product} ) }>Delete from cart</button>
       </div>
 </div>
   )

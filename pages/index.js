@@ -1,4 +1,4 @@
-import { useContext, createContext, useState} from 'react'
+import { createContext} from 'react'
 
 import { connectToDatabase } from '../util/mongodb'
 
@@ -6,11 +6,6 @@ import CustomHead from '../components/custom-head'
 import Navbar from '../components/navbar'
 import ProductCard from '../components/product-card'
 import Slider from '../components/slider'
-
-// import cartState from '../contexts/cart'
-// import Context from '../contexts/context'
-
-
 
 export default function Home({ allProducts }) {
   const featureSlider = [
@@ -31,7 +26,7 @@ export default function Home({ allProducts }) {
 
           <div className="uk-child-width-1-4" uk-grid="true">
             {allProducts.map(product => {
-              return <ProductCard product={product} key={product.id}/>;
+              return <ProductCard product={product} key={product._id}/>;
             })}
           </div>
         </main>
@@ -58,11 +53,13 @@ export async function getServerSideProps(context) {
   const allProducts = data.map(item => {
     const price = JSON.parse(item.price)
     return {
-      id: item._id,
+      _id: item._id,
       name: item.name,
       brand: item.brand,
+      type: item.type,
       price: price,
-      featuredImage: item.pics[1],
+      pics: item.pics,
+      //featuredImage: item.pics[1],
     }
   })
 

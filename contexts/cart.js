@@ -9,7 +9,7 @@ const cart = () => {
     const {type, payload} = action;
 
     const beforeAddToCart = () => {
-      let indexOfProduct = cart.findIndex(el => el.id == payload.id);
+      let indexOfProduct = cart.findIndex(el => el._id == payload._id);
       let tempCart = [...cart];
 
       if(indexOfProduct < 0 ){
@@ -22,6 +22,24 @@ const cart = () => {
       }
     }
 
+    const deleteOne = () => {
+      let indexOfProduct = cart.findIndex(el => el._id == payload._id);
+      let tempCart = [...cart];
+
+      if(indexOfProduct < 0 ){
+        
+      }else{
+
+        if(tempCart[indexOfProduct].quantity == 1){
+
+        }else{
+          tempCart[indexOfProduct].quantity -= 1;
+          setCart([...tempCart]);
+        }
+
+      }
+    }
+
     switch(type){
       case 'addToCard':
         beforeAddToCart();
@@ -30,6 +48,12 @@ const cart = () => {
         const newCart = cart.filter(el => el.id !== payload.id)
         setCart(newCart);
         return cart
+        case 'addOne':
+          beforeAddToCart();
+          return cart
+        case 'deleteOne':
+          deleteOne();
+          return cart
       default:
         return cart;
     }
