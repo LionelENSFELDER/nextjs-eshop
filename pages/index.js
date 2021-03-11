@@ -55,9 +55,15 @@ export async function getServerSideProps(context) {
     return {
       _id: item._id,
       name: item.name,
-      brand: item.brand,
       type: item.type,
+      subtype: item.subtype,
       price: price,
+      brand: item.brand,
+      description: item.description,
+      size: item.size,
+      stocked: item.stocked,
+      featured: item.Featured,
+      //date: item.date,
       pics: item.pics,
       //featuredImage: item.pics[1],
     }

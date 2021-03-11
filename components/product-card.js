@@ -35,7 +35,7 @@ export default function ProductCard({ product }){
         </a>
       </Link>
       <div>
-        <button type="button" className="btn btn-warning" onClick={() => actions( {type: "addToCard", payload: product} ) }>Add to cart</button>
+        <button type="button" className="btn btn-warning" onClick={() => actions( {type: "addToCard", payload: product, quantity:1} ) }>Add to cart</button>
         <button type="button" className="btn btn-warning" onClick={() => actions( {type: "deleteFromCard", payload: product} ) }>Delete from cart</button>
       </div>
 </div>

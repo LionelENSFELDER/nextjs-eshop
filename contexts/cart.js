@@ -6,54 +6,31 @@ const cart = () => {
   console.log('cart state ', cart);
 
   const actions = (action) => {
-    const {type, payload} = action;
+    const {type, payload, quantity} = action;
 
-    const beforeAddToCart = () => {
+    const setProductToCart = () => {
       let indexOfProduct = cart.findIndex(el => el._id == payload._id);
+      const nbOfProduct = quantity;
       let tempCart = [...cart];
 
       if(indexOfProduct < 0 ){
-        const newProduct = {...payload, quantity: 1};
+        const newProduct = {...payload, quantity: nbOfProduct};
         tempCart.push(newProduct);
         setCart([...tempCart]);
       }else{
-        tempCart[indexOfProduct].quantity += 1;
+        tempCart[indexOfProduct].quantity = nbOfProduct;
         setCart([...tempCart]);
-      }
-    }
-
-    const deleteOne = () => {
-      let indexOfProduct = cart.findIndex(el => el._id == payload._id);
-      let tempCart = [...cart];
-
-      if(indexOfProduct < 0 ){
-        
-      }else{
-
-        if(tempCart[indexOfProduct].quantity == 1){
-
-        }else{
-          tempCart[indexOfProduct].quantity -= 1;
-          setCart([...tempCart]);
-        }
-
       }
     }
 
     switch(type){
       case 'addToCard':
-        beforeAddToCart();
+        setProductToCart();
         return cart
       case 'deleteFromCard':
-        const newCart = cart.filter(el => el.id !== payload.id)
+        const newCart = cart.filter(el => el._id !== payload._id)
         setCart(newCart);
         return cart
-        case 'addOne':
-          beforeAddToCart();
-          return cart
-        case 'deleteOne':
-          deleteOne();
-          return cart
       default:
         return cart;
     }
