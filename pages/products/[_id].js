@@ -18,7 +18,6 @@ export default function Product({ product }) {
 
   const {cart, actions} = useContext(cartContext)
   const [quantity, setQuantity] = useState(1)
-  console.log(product.name);
 
 	return (
 		<div className="uk-container">
@@ -73,7 +72,7 @@ export default function Product({ product }) {
                     <hr></hr>
 
                     <div className="uk-margin-top">
-                      <p className="">En stock ? : { () => { if(product.stocked){return 'true'}return 'false' } }</p>
+                      <p className="">En stock : { product.stocked ? 'Oui' : 'Bientôt disponible' }</p>
                       <p className="">Référence : { product._id }</p>
                       <p className="">Marque : {product.brand}</p>
                     </div>
