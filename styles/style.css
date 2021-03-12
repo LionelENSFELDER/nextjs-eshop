@@ -20,3 +20,6 @@ html,body {
 .link-add-to-wishlist > .la-plus-circle{
   color: #373940 !important;
 }
+.uk-button-text-no-border::before{
+  border: none !important;
+}
