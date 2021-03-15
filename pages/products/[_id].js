@@ -1,10 +1,10 @@
-import CustomHead from '../../components/custom-head'
-import Navbar from '../../components/navbar'
 import { useRouter } from 'next/router'
 import { connectToDatabase } from '../../util/mongodb'
 import { useContext, useState } from 'react'
 import cartContext from '../../contexts/context'
 
+import CustomHeadComponent from '../../components/custom-head'
+import NavbarComponent from '../../components/navbar'
 // const Product = ({ product }) => {
 //     const router = useRouter()
 //     const { productId } = router.query
@@ -21,9 +21,9 @@ export default function Product({ product }) {
 
 	return (
 		<div className="uk-container">
-      <CustomHead />
+      <CustomHeadComponent />
 			<main>
-        <Navbar />
+        <NavbarComponent />
 				<div>
 					{product &&
             <div>

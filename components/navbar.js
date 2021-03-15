@@ -1,3 +1,6 @@
+import Link from 'next/link'
+
+
 export default function Navbar(){
 	return (
 		<div>
@@ -9,9 +12,11 @@ export default function Navbar(){
 							<div className="uk-navbar-left uk-text-bolder">
 
 								<ul className="uk-navbar-nav uk-align-left">
-									<a className="uk-navbar-item uk-logo" href="/">
-											<img className="" src="/assets/img/logo.png" alt="" width="60px"/>
-									</a>
+									<Link href="/">
+                    <a className="uk-navbar-item uk-logo">
+                        <img className="" src="/assets/img/logo.png" alt="" width="60px"/>
+                    </a>
+                  </Link>
 								</ul>
 
 							</div>
@@ -32,7 +37,7 @@ export default function Navbar(){
                         </a>
 
                         <ul className="uk-list">
-                          <li><a href="/">HOME</a></li>
+                          <li><Link href="/"><a>HOME</a></Link></li>
                           <li><a href="#">A PROPOS</a></li>
                           <li>
                             <a href="#" type="button">CATEGORIES</a>
@@ -67,7 +72,9 @@ export default function Navbar(){
                   </li>
 									<li><a href="#">CONTACT</a></li>
 									<li><a href="#"><i className="las la-user la-2x"></i>LOGIN</a></li>
-                  <li><a href="#"><i className="las la-shopping-cart la-2x"></i>PANIER</a></li>
+                  <li>
+                    <Link href="/cart"><a><i className="las la-shopping-cart la-2x"></i>PANIER</a></Link>
+                  </li>
                 </ul>
 
 							</div>

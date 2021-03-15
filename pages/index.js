@@ -2,10 +2,10 @@ import { createContext} from 'react'
 
 import { connectToDatabase } from '../util/mongodb'
 
-import CustomHead from '../components/custom-head'
-import Navbar from '../components/navbar'
-import ProductCard from '../components/product-card'
-import Slider from '../components/slider'
+import CustomHeadComponent from '../components/custom-head'
+import NavbarComponent from '../components/navbar'
+import ProductCardComponent from '../components/product-card'
+import SliderComponent from '../components/slider'
 
 export default function Home({ allProducts }) {
   const featureSlider = [
@@ -16,17 +16,17 @@ export default function Home({ allProducts }) {
   
   return (
     <div className="uk-container">
-      <CustomHead />
+      <CustomHeadComponent />
       
         <main>
           <div>
-            <Navbar />
-            <Slider slides = {featureSlider}/>
+            <NavbarComponent />
+            <SliderComponent slides = {featureSlider}/>
           </div>
 
           <div className="uk-child-width-1-4" uk-grid="true">
             {allProducts.map(product => {
-              return <ProductCard product={product} key={product._id}/>;
+              return <ProductCardComponent product={product} key={product._id}/>;
             })}
           </div>
         </main>
