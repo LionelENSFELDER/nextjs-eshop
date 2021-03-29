@@ -4,25 +4,32 @@ import cartContext from '../contexts/context'
 
 export default function cartProductCard({product}){
 
-  const {cart, actions} = useContext(cartContext)
-  console.log('product.quantity', product.quantity);
-  let initialQuantity = product.quantity
-  const [quantity, setQuantity] = useState(initialQuantity)
+  const {cart, actions} = useContext(cartContext);
+  
+  let initialQuantity = product.quantity;
+  const [quantity, setQuantity] = useState(initialQuantity);
 
-  let ProductPrice = (initialQuantity * product.price)
-
-  const handleMinusOne = ()=>{
-    quantity <= 1 ? setQuantity(1) : setQuantity(quantity - 1)
-    actions({type: 'addToCard', payload: product, quantity: quantity})
+  const unitPrice = product.price;
+  const [productPrice, setProductPrice] = useState(unitPrice * product.quantity);
+  
+  const calcProductPrice = () => {
+    setProductPrice(product.quantity * unitPrice);
   }
 
-  const handlePlusOne = ()=>{
-    quantity >= 5 ? setQuantity(5) : setQuantity(quantity + 1)
-    actions({type: 'addToCard', payload: product, quantity: quantity})
+  const handleMinusOne = () => {
+    quantity <= 1 ? setQuantity(1) : setQuantity(quantity - 1);
+    actions({type: 'addToCard', payload: product, quantity: quantity});
+    setInterval(calcProductPrice(), 1000);
+  }
+
+  const handlePlusOne = () => {
+    quantity >= 5 ? setQuantity(5) : setQuantity(quantity + 1);
+    actions({type: 'addToCard', payload: product, quantity: quantity});
+    setInterval(calcProductPrice(), 1000);
   }
 
   const handleDeleteItem = ()=>{
-    actions({type: "deleteFromCard", payload: product})
+    actions({type: "deleteFromCard", payload: product});
   }
 
   return(
@@ -48,19 +55,19 @@ export default function cartProductCard({product}){
 
             <div className="">
 
-              <button className="uk-button uk-button-text uk-button-text-no-border" onClick={() => handleMinusOne()}>
+              <button className="uk-button uk-button-text uk-button-text-no-border uk-margin-left uk-margin-right" onClick={() => handleMinusOne()}>
                 <i className="las la-minus la-1x"></i>
               </button>
 
-              <button className="uk-button uk-button-text uk-button-text-no-border">{product.quantity}</button>
+              <button className="uk-button uk-button-text uk-button-text-no-border uk-margin-right">{product.quantity}</button>
 
-              <button className="uk-button uk-button-text uk-button-text-no-border" onClick={() => handlePlusOne()}>
+              <button className="uk-button uk-button-text uk-button-text-no-border uk-margin-right" onClick={() => handlePlusOne()}>
                 <i className="las la-plus la-1x"></i>
               </button>
 
             </div>
 
-            <div className="">{ProductPrice}</div>
+            <div className="">{productPrice}</div>
 
           </div>
           
