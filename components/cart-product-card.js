@@ -44,7 +44,7 @@ export default function cartProductCard({product}){
 
         <div className="uk-width-3-4">
           <div className="uk-width-1-1 uk-inline">
-            <button className="uk-position-top-right" onClick={() => handleDeleteItem()}><i class="las la-times"></i></button>
+            <button className="uk-position-top-right" onClick={() => handleDeleteItem()}><i className="las la-times"></i></button>
             <span className="uk-display-block">{product.name}</span>
           </div>
           <span className="uk-display-block">{product.description}</span>
