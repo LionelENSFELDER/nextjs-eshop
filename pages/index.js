@@ -1,4 +1,4 @@
-import { createContext} from 'react'
+import { useContext, createContext } from 'react'
 
 import { connectToDatabase } from '../util/mongodb'
 
@@ -7,7 +7,12 @@ import NavbarComponent from '../components/navbar'
 import ProductCardComponent from '../components/product-card'
 import SliderComponent from '../components/slider'
 
+import cartContext from '../contexts/context'
+
 export default function Home({ allProducts }) {
+
+  const {cart, actions} = useContext(cartContext)
+
   const featureSlider = [
     "https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format",
     "https://images.unsplash.com/photo-1543087903-1ac2ec7aa8c5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2xvdGhpbmd8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format",

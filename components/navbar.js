@@ -59,19 +59,27 @@ export default function Navbar(){
 
                 {/* desktop menu */}
 								<ul className="uk-navbar-nav uk-visible@m">
-									<li><a href="/">HOME</a></li>
-									<li><a href="#">A PROPOS</a></li>
+									<li>
+                    <Link href="/"><a>HOME</a></Link>
+                  </li>
+									<li>
+                    <Link href="#"><a>A PROPOS</a></Link>
+                  </li>
 									<li>
                     <a href="#" type="button">CATEGORIES</a>
                     <div uk-dropdown="mode: click">
                         <ul className="uk-list">
-                          <li><a href="#">sdfdfdf</a></li>
-                          <li><a href="#">ssdsds dfdfdf</a></li>
+                          <Link href="#"><a>Cat 1</a></Link>
+                          <Link href="#"><a>Cat 2</a></Link>
                         </ul>
                     </div>
                   </li>
-									<li><a href="#">CONTACT</a></li>
-									<li><a href="#"><i className="las la-user la-2x"></i>LOGIN</a></li>
+									<li>
+                    <Link href="#"><a>CONTACT</a></Link>
+                  </li>
+									<li>
+                    <Link href="#"><a>LOGIN</a></Link>
+                  </li>
                   <li>
                     <Link href="/cart"><a><i className="las la-shopping-cart la-2x"></i>PANIER</a></Link>
                   </li>
