@@ -20,19 +20,23 @@ export default function Home({ allProducts }) {
   ]
   
   return (
-    <div className="uk-container">
+    <div>
       <CustomHeadComponent />
       
         <main>
-          <div>
+          <header>
             <NavbarComponent />
-            <SliderComponent slides = {featureSlider}/>
-          </div>
-
-          <div className="uk-child-width-1-4" uk-grid="true">
-            {allProducts.map(product => {
-              return <ProductCardComponent product={product} key={product._id}/>;
-            })}
+            <div id="header-slider-container">
+              <SliderComponent slides = {featureSlider}/>
+            </div>
+          </header>
+          
+          <div className="uk-container">
+            <div className="uk-child-width-1-4" uk-grid="true">
+              {allProducts.map(product => {
+                return <ProductCardComponent product={product} key={product._id}/>;
+              })}
+            </div>
           </div>
         </main>
 

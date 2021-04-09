@@ -23,3 +23,8 @@ html,body {
 .uk-button-text-no-border::before{
   border: none !important;
 }
+/* SLider */
+#header-slider-container{
+  position: relative;
+  top: 0;
+}
