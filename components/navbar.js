@@ -5,7 +5,7 @@ export default function Navbar(){
 	return (
 			<div className="" uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-background-default; cls-inactive: uk-position-fixed uk-navbar-transparent; top: 10">
 				<nav className="uk-navbar-container uk-width-1-1">
-					<div className="uk-container">
+					<div className="uk-container uk-container-xlarge">
 						<div uk-navbar="true">
               
 							<div className="uk-navbar-left uk-text-bolder">

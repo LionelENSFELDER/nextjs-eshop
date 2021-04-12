@@ -27,6 +27,7 @@ export default function Home({ allProducts }) {
       <CustomHeadComponent />
       
         <main>
+
           <header>
               <NavbarComponent />
           </header>
@@ -34,13 +35,52 @@ export default function Home({ allProducts }) {
             <SliderComponent slides = {featureSlider}/>
           </div>
           
-          <div className="uk-container">
-            <div className="uk-child-width-1-4" uk-grid="true">
+          <section className="uk-container uk-container-xlarge uk-margin-xlarge-bottom">
+
+            <h2 className="uk-text-bold">Best sellers</h2>
+            <div className="uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid="true">
               {allProducts.map(product => {
                 return <ProductCardComponent product={product} key={product._id}/>;
               })}
             </div>
-          </div>
+
+          </section>
+          
+          <section className="uk-container uk-container-xlarge uk-margin-xlarge-bottom">
+
+            <div className="uk-grid-large uk-child-width-expand@s uk-child-width-1-3@m" uk-grid="true">
+
+              <div>
+                <div className="uk-height-medium uk-cover-container uk-light">
+                  <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D" alt="" uk-cover />
+                  <div className="uk-position-cover uk-flex uk-flex-center uk-flex-middle">
+                    <h3 className="">Collection Femme</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div className="uk-height-medium uk-cover-container uk-light">
+                  <img src="https://images.unsplash.com/photo-1550684376-efcbd6e3f031?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D" alt="" uk-cover />
+                  <div className="uk-position-cover uk-flex uk-flex-center uk-flex-middle">
+                    <h3 className="">MEGA PROMOS !</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div className="uk-height-medium uk-cover-container uk-light">
+                  <img src="https://images.unsplash.com/photo-1571210862729-78a52d3779a2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D" alt="" uk-cover />
+                  <div className="uk-position-cover uk-flex uk-flex-center uk-flex-middle">
+                    <h3 className="">Collection Enfant</h3>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+
+          </section>
+
         </main>
 
       <style jsx>{`
@@ -61,7 +101,7 @@ export async function getServerSideProps(context) {
 
   // const isConnected = await client.isConnected()
 
-  const data = await db.collection('products').find().sort({id: 1}).limit(100).toArray()
+  const data = await db.collection('products').find().sort({id: 1}).limit(4).toArray()
   const allProducts = data.map(item => {
     const price = JSON.parse(item.price)
     return {

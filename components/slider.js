@@ -11,7 +11,7 @@ export default function Slider(props){
   );
   return(
     <div>
-      <div className="uk-position-relative uk-visible-toggle uk-light uk-margin-large-bottom" tabIndex="-1" uk-slideshow="animation: push; ratio: false; autoplay: true; autoplay-interval: 3000; sets: true">
+      <div className="uk-position-relative uk-visible-toggle uk-light uk-margin-xlarge-bottom" tabIndex="-1" uk-slideshow="animation: push; ratio: false; autoplay: true; autoplay-interval: 3000; sets: true">
         <ul className="uk-slideshow-items" uk-height-viewport="offset-bottom:0">
           {slidesItems}
         </ul>
