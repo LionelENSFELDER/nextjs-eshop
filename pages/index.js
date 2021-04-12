@@ -13,10 +13,13 @@ export default function Home({ allProducts }) {
 
   const {cart, actions} = useContext(cartContext)
 
+  // TODO download and compress sliders images
   const featureSlider = [
-    "https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format",
-    "https://images.unsplash.com/photo-1543087903-1ac2ec7aa8c5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2xvdGhpbmd8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format",
-    "https://images.unsplash.com/photo-1570425387687-d2a34c7304a9?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format"
+    "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNuZWFrZXJzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format",
+    "https://images.unsplash.com/photo-1529720317453-c8da503f2051?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format",
+    "https://images.unsplash.com/photo-1499237302743-ba2c2740f824?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format",
+    "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format",
+    "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format"
   ]
   
   return (
@@ -25,11 +28,11 @@ export default function Home({ allProducts }) {
       
         <main>
           <header>
-            <NavbarComponent />
-            <div id="header-slider-container">
-              <SliderComponent slides = {featureSlider}/>
-            </div>
+              <NavbarComponent />
           </header>
+          <div uk-height-viewport="expand: true">
+            <SliderComponent slides = {featureSlider}/>
+          </div>
           
           <div className="uk-container">
             <div className="uk-child-width-1-4" uk-grid="true">

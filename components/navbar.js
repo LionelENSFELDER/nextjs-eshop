@@ -3,10 +3,9 @@ import Link from 'next/link'
 
 export default function Navbar(){
 	return (
-		<div>
-			<div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 60">
-				<nav className="uk-navbar-container uk-navbar-transparent">
-					<div className="uk-container uk-container-expand">
+			<div className="" uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-background-default; cls-inactive: uk-position-fixed uk-navbar-transparent; top: 10">
+				<nav className="uk-navbar-container uk-width-1-1">
+					<div className="uk-container">
 						<div uk-navbar="true">
               
 							<div className="uk-navbar-left uk-text-bolder">
@@ -91,6 +90,5 @@ export default function Navbar(){
 					</div>
 				</nav>
 			</div>
-		</div>
 	)
 }

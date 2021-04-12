@@ -10,11 +10,17 @@ export default function CartPage(){
   const {cart, actions} = useContext(cartContext)
 
   return(
-    <div className="uk-container">
+    <div>
       <CustomHeadComponent />
+
       <main>
-        <div>
+        <header>
           <NavbarComponent />
+        </header>
+        <div class="uk-height-medium">
+
+        </div>
+        <div className="uk-container">
           <h1>Panier</h1>
           {console.log('cart', cart)}
 

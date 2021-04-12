@@ -1,30 +1,40 @@
 * {
   box-sizing: border-box;
 }
+:root{
+  --dark: #373940;
+  --white: #FFF;
+  --light-grey: #EEEEEE;
+  --yellow: #FFDB46;
+}
 html,body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
-  background-color: #FFF;
-  color: #373940 !important;
+  background-color: var(--white);
+  color: var(--dark) !important;
   font-weight: bold !important;
 }
+nav{
+  z-index: 999;
+}
+.uk-navbar-nav > li > a{
+  color: var(--font-main-color) !important;
+}
 .uk-navbar-container:not(.uk-navbar-transparent){
-  background-color: #FFF !important;
+  background-color: var(--white)!important;
 }
 .uk-offcanvas-bar a{
-  color: #373940 !important;
+  color: var(--dark) !important;
 }
 .link-add-to-wishlist > .la-plus-circle{
-  color: #373940 !important;
+  color: var(--dark) !important;
 }
 .uk-button-text-no-border::before{
   border: none !important;
 }
-/* SLider */
-#header-slider-container{
-  position: relative;
-  top: 0;
+.icon-star{
+  color: var(--yellow);
 }
