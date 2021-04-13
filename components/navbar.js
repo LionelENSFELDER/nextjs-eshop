@@ -1,6 +1,5 @@
 import Link from 'next/link'
 
-
 export default function Navbar(){
 	return (
 			<div className="" uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-background-default; cls-inactive: uk-position-fixed uk-navbar-transparent; top: 10">
@@ -9,7 +8,7 @@ export default function Navbar(){
 						<div uk-navbar="true">
               
 							<div className="uk-navbar-left uk-text-bolder">
-
+              {/* TODO : add link tag to all menu links (desktop and mobile) */}
 								<ul className="uk-navbar-nav uk-align-left">
 									<Link href="/">
                     <a className="uk-navbar-item uk-logo">
@@ -48,8 +47,8 @@ export default function Navbar(){
                             </div>
                           </li>
                           <li><a href="#">CONTACT</a></li>
-                          <li><a href="#"><i className="las la-user la-2x"></i>LOGIN</a></li>
-                          <li><a href="#"><i className="las la-shopping-cart la-2x"></i>PANIER</a></li>
+                          <li><Link href="/login"><a><i className="las la-user la-2x"></i>LOGIN</a></Link></li>
+                          <li><Link href="/cart"><a><i className="las la-shopping-cart la-2x"></i>PANIER</a></Link></li>
                         </ul>
                       </div>
                     </div>
