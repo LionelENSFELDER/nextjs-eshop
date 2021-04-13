@@ -3,7 +3,7 @@ export default function Slider(props){
   const slidesItems = slides.map((slide)=>
     <li key={slide}>
       <img src={slide} alt="" uk-cover="true" className="uk-height-1-1"/>
-      <div class="uk-position-center uk-text-center">
+      <div className="uk-position-center uk-text-center">
         <h1 uk-slider-parallax="x: 100,-100">Heading</h1>
         <p uk-slider-parallax="x: 200,-200">Lorem ipsum dolor sit amet.</p>
       </div>

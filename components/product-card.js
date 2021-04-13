@@ -1,10 +1,10 @@
-import Link from 'next/link'
-import { useContext} from 'react'
-import cartContext from '../contexts/context'
+import Link from 'next/link';
+import { useContext} from 'react';
+import cartContext from '../contexts/context';
 
 export default function ProductCard({ product }){
 
-  const {cart, actions} = useContext(cartContext)
+  const {cart, actions} = useContext(cartContext);
 
   return(
     <div className="uk-inline">
@@ -35,8 +35,8 @@ export default function ProductCard({ product }){
         </a>
       </Link>
       <div id="product-card-actions" className="uk-text-right">
-        <button class="uk-button uk-button-secondary" onClick={() => actions( {type: "addToCard", payload: product, quantity:1} ) }>Ajouter au panier</button>
-        {/* <button class="uk-button uk-button-secondary" onClick={() => actions( {type: "deleteFromCard", payload: product} ) }>Supprimer du panier</button> */}
+        <button className="uk-button uk-button-secondary" onClick={() => actions( {type: "addToCard", payload: product, quantity:1} ) }>Ajouter au panier</button>
+        {/* <button className="uk-button uk-button-secondary" onClick={() => actions( {type: "deleteFromCard", payload: product} ) }>Supprimer du panier</button> */}
       </div>
     </div>
   )

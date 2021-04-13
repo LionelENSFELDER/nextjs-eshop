@@ -37,6 +37,8 @@ export default function CartPage(){
                   })}
                 </div>
 
+                // TODO : add https://getuikit.com/docs/leader
+
                 <div className="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-background-muted">
                   <h3 className="uk-card-title">Total</h3>
                   <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>

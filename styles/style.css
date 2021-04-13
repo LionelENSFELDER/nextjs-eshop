@@ -38,3 +38,7 @@ nav{
 .icon-star{
   color: var(--yellow);
 }
+.article-card-dots{
+  font-size: 4em;
+  color: var(--light-grey);
+}
