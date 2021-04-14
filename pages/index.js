@@ -6,7 +6,8 @@ import CustomHeadComponent from '../components/custom-head';
 import NavbarComponent from '../components/navbar';
 import ProductCardComponent from '../components/product-card';
 import SliderComponent from '../components/slider';
-import BlogArticleCard from '../components/blog-article-card';
+import BlogArticleCardComponent from '../components/blog-article-card';
+import FooterComponent from '../components/footer';
 
 import cartContext from '../contexts/context';
 
@@ -102,7 +103,7 @@ export default function Home({ bestSellersProducts, popularProducts }) {
             <h2 className="uk-text-bold">Les Derniers Articles</h2>
             <div className="uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid="true">
               {articlesData.map(article => {
-                return <BlogArticleCard article={article} key={article._id}/>;
+                return <BlogArticleCardComponent article={article} key={article._id}/>;
               })}
             </div>
 
@@ -132,6 +133,14 @@ export default function Home({ bestSellersProducts, popularProducts }) {
               </div>
 
             </div>
+
+          </section>
+
+          <hr />
+
+          <section className="uk-container uk-container-xlarge">
+
+            <FooterComponent/>
 
           </section>
 
