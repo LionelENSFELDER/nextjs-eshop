@@ -96,7 +96,7 @@ export default function Home({ bestSellersProducts, popularProducts }) {
 
           </section>
 
-          // TODO : create article single page
+          {/* TODO : create article single page */}
           <section className="uk-container uk-container-xlarge uk-margin-xlarge-bottom">
 
             <h2 className="uk-text-bold">Les Derniers Articles</h2>

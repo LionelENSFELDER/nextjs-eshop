@@ -17,12 +17,11 @@ export default function CartPage(){
         <header>
           <NavbarComponent />
         </header>
-        <div class="uk-height-medium">
+        <div className="uk-height-medium">
 
         </div>
         <div className="uk-container">
           <h1>Panier</h1>
-          {console.log('cart', cart)}
 
           {Array.isArray(cart)&&
             
@@ -37,7 +36,7 @@ export default function CartPage(){
                   })}
                 </div>
 
-                // TODO : add https://getuikit.com/docs/leader
+                {/* TODO : add leader */}
 
                 <div className="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-background-muted">
                   <h3 className="uk-card-title">Total</h3>

@@ -3,7 +3,6 @@ import {useState} from 'react'
 const cart = () => {
   
   const [cart, setCart] = useState([]);
-  console.log('cart state ', cart);
 
   const actions = (action) => {
     const {type, payload, quantity} = action;
