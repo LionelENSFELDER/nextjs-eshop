@@ -108,6 +108,33 @@ export default function Home({ bestSellersProducts, popularProducts }) {
 
           </section>
 
+          <section className="uk-container uk-container-xlarge uk-margin-xlarge-bottom">
+
+            <div className="uk-child-width-1-3@s uk-child-width-1-6@m uk-flex uk-flex-center" uk-grid="true">
+
+              <div className="">
+                <img src="/assets/img/brands/chanel.png" alt=""  />
+              </div>
+              <div className="">
+                <img src="/assets/img/brands/nike.png" alt=""  />
+              </div>
+              <div className="">
+                <img src="/assets/img/brands/puma.png" alt=""  />
+              </div>
+              <div className="">
+                <img src="/assets/img/brands/superdry.png" alt=""  />
+              </div>
+              <div className="">
+                <img src="/assets/img/brands/versace.png" alt=""  />
+              </div>
+              <div className="">
+                <img src="/assets/img/brands/oneill.png" alt=""  />
+              </div>
+
+            </div>
+
+          </section>
+
         </main>
 
       <style jsx>{`
