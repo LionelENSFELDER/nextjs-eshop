@@ -16,24 +16,64 @@ export default function CartPage(){
         <header>
           <NavbarComponent />
         </header>
-        <div className="uk-height-medium">
-        </div>
+        <div className="uk-height-medium"></div>
         <section className="uk-container uk-container-xlarge">
-          <h1>Panier</h1>
           {Array.isArray(cart)&&
-            <div>
-              <div className="uk-height-match uk-grid-collapse uk-child-width-1-1 uk-child-width-1-2@m" uk-grid="true">
-                <div className="uk-card uk-card-default uk-card-body uk-width-1-2@m">
-                  {cart.map(product =>{
-                    return(
-                      <CartProductCard product={product} key={product._id}/>
-                    )
-                  })}
+            <div className="uk-container">
+              <div className="uk-grid-large" uk-grid="true">
+                <div className="uk-width-1-1 uk-width-3-5@m">
+                  <div className="uk-card">
+                    <h2 className="uk-text-bold">Panier</h2>
+                    {cart.map(product =>{
+                      return(
+                        <CartProductCard product={product} key={product._id}/>
+                      )
+                    })}
+                    <div className="uk-text-left">
+                      <a href="/" className="uk-button uk-button-secondary">Continuer mes achats</a>
+                    </div>
+                  </div>
                 </div>
                 {/* TODO : add leader */}
-                <div className="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-background-muted">
-                  <h3 className="uk-card-title">Total</h3>
-                  <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div className="uk-width-1-1 uk-width-2-5@m uk-background-muted uk-height-1-1">
+                  <div className="uk-margin-large-top uk-margin-large-bottom uk-margin-large-right">
+                    <h3 className="uk-card-title">Sous-total</h3>
+                    <div className="uk-margin-medium-bottom" uk-grid="true">
+                      <div>
+                        <span className="uk-text-normal">X articles</span><br/>
+                        €XXX
+                      </div>
+                      <div>
+                        <p>
+                          <span className="uk-text-normal">Frais de livraison</span><br/>
+                          GRATUIT
+                        </p>
+                      </div>
+                    </div>
+                    <hr />
+                    <div className="uk-margin-medium-bottom">
+                      <ul uk-accordion="true">
+                        <li>
+                          <a className="uk-accordion-title" href="#"><i className="uk-text-lead las la-tag"></i><span class="uk-text-top">Code promo ?</span></a>
+                          <div class="uk-accordion-content">
+                            <form>
+                              <div class="uk-margin" uk-margin="true">
+                                  <input class="uk-input uk-form-width-large uk-form-large" type="text" placeholder="Ex : FRENCHDAYS" />
+                              </div>
+                            </form>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <hr />
+                    <div>
+                      <h3 className="uk-card-title">Total (taxes incl.)</h3>
+                      <span className="uk-text-lead">€XXX</span>
+                    </div>
+                    <div className="uk-text-left uk-margin-large-top">
+                      <a href="/" className="uk-button uk-button-secondary">Procéder au paiement</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
