@@ -25,11 +25,12 @@ const cart = () => {
     switch(type){
       case 'addToCard':
         setProductToCart();
-        return cart
+        return cart;
       case 'deleteFromCard':
         const newCart = cart.filter(el => el._id !== payload._id)
         setCart(newCart);
-        return cart
+        return cart;
+      //case ''
       default:
         return cart;
     }

@@ -7,7 +7,18 @@ import FooterComponent from '../components/footer';
 
 export default function CartPage(){
 
-  const {cart, actions} = useContext(cartContext)
+  const {cart, actions} = useContext(cartContext);
+
+  const totalProductsPrice = () => {
+    var total = 0;
+    cart.map(product =>{
+      let unitPrice = product.price;
+      let quantity = product.quantity;
+      let totalForThisProduct = unitPrice * quantity;
+      total = total + totalForThisProduct;
+    });
+    return parseFloat(total.toFixed(2));
+  }
 
   return(
     <div>
@@ -41,7 +52,7 @@ export default function CartPage(){
                     <div className="uk-margin-medium-bottom" uk-grid="true">
                       <div>
                         <span className="uk-text-normal">X articles</span><br/>
-                        €XXX
+                        {totalProductsPrice()}
                       </div>
                       <div>
                         <p>
@@ -68,7 +79,7 @@ export default function CartPage(){
                     <hr />
                     <div>
                       <h3 className="uk-card-title">Total (taxes incl.)</h3>
-                      <span className="uk-text-lead">€XXX</span>
+                      <span className="uk-text-lead"></span>
                     </div>
                     <div className="uk-text-left uk-margin-large-top">
                       <a href="/" className="uk-button uk-button-secondary">Procéder au paiement</a>

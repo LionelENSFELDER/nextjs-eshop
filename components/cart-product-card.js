@@ -13,7 +13,8 @@ export default function cartProductCard({product}){
   const [productPrice, setProductPrice] = useState(unitPrice * product.quantity);
   
   const calcProductPrice = () => {
-    setProductPrice(product.quantity * unitPrice);
+    let price = product.quantity * unitPrice;
+    setProductPrice(parseFloat(price.toFixed(2)));
   }
 
   const handleMinusOne = () => {
