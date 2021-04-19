@@ -67,7 +67,7 @@ export default function cartProductCard({product}){
           </div>
         </div>
       </div>
-      <hr class="uk-divider-small"></hr>
+      <hr className="uk-divider-small"></hr>
     </div>
   )
 }
