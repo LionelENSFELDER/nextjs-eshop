@@ -9,74 +9,47 @@ import FooterComponent from '../components/footer';
 export default function CartPage() {
 
   const { cart, actions } = useContext(cartContext);
-  const [subTotal, setSubTotal] = useState(0);
-  const [total, setTotal] = useState(0);
-  const [discount, setDiscount] = useState(0);
-  const [productCount, setProductCount] = useState(0);
 
-  useEffect(() => {
-    productsCounter();
-    calcSubTotal();
-    calcTotal();
-  });
+  var discount = cart.discount;
+  var subtotal = cart.subtotal;
+  var total = cart.subtotal;
 
-  const calcSubTotal = () => {
-    let result = 0;
-    if(cart !== []){
-      cart.map(product => {
-        let totalForThisProduct = product.price * product.quantity;
-        result = result + totalForThisProduct;
-      });
-      setSubTotal(result);
-    }
-  }
+  // useEffect(() => {
+  //   displayTotal();
+  //   actions( { type: 'setTotal', total: total } );
+  // }, [cart.discount]);
 
-  const calcTotal = () => {
-    let result = 0;
-    if(cart !== []){
-      cart.map(product => {
-        let totalForThisProduct = product.price * product.quantity;
-        result = result + totalForThisProduct;
-      });
-      result = result - (discount * result)
-      setTotal(result);
-    }
-  }
-
-  const productsCounter = () => {
-    let counter = 0;
-    if(cart !== []){
-      for (const product of cart) {
-        counter += 1;
-      }
-    }
-    setProductCount(counter);
+  const displayTotal = () => {
+    discount = cart.discount;
+    total = subtotal - ( subtotal * discount);
+    console.log(cart.discount, discount, total);
+    return total;
   }
 
   const promoCodes = [
     {
-      'code' : 'FRENCH',
-      'discount' : 10,
+      'code' : 'french',
+      'discount' : 0.1,
       'time' : 604800,
       'start' : "01012021"
     },
     {
-      'code' : 'BLACK',
-      'discount' : 50,
+      'code' : 'black',
+      'discount' : 0.5,
       'time' : 604800,
       'start' : "16112021"
     }
   ]
 
-  const setPromo = (e) => {
-    let discount = 0;
-    let value = e.target.value;
-    promoCodes.forEach(element => {
-      if(element.code === value){
-        setDiscount(element.discount / 100);
-      }
-    }); 
-  }
+  // const setDiscount = (e) => {
+  //   let discount = 0;
+  //   promoCodes.forEach(element => {
+  //     if(element.code === e.target.value){
+  //       discount = element.discount;
+  //     }
+  //     actions({ type: 'setDiscount', discount: discount});
+  //   }); 
+  // }
 
   return (
     <div>
@@ -87,13 +60,13 @@ export default function CartPage() {
         </header>
         <div className="uk-height-medium"></div>
         <section className="uk-container uk-container-xlarge">
-          {Array.isArray(cart) &&
+          {Array.isArray(cart.products) &&
             <div className="uk-container">
               <div className="uk-grid-large" uk-grid="true">
                 <div className="uk-width-1-1 uk-width-3-5@m">
                   <div className="uk-card">
                     <h2 className="uk-text-bold">Panier</h2>
-                    {cart.map(product => {
+                    {cart.products.map(product => {
                       return (
                         <CartProductCard product={product} key={product._id} />
                       )
@@ -111,8 +84,8 @@ export default function CartPage() {
                     <h3 className="uk-card-title">Sous-total</h3>
                     <div className="uk-margin-medium-bottom" uk-grid="true">
                       <div>
-                        <span className="uk-text-normal">{productCount} articles</span><br />
-                        {subTotal}
+                        <span className="uk-text-normal">{cart.numberOfProducts} articles</span><br />
+                        {subtotal.toFixed(2)}
                       </div>
                       <div>
                         <p>
@@ -122,24 +95,24 @@ export default function CartPage() {
                       </div>
                     </div>
                     <hr />
-                    <div className="uk-margin-medium-bottom">
+                    {/* <div className="uk-margin-medium-bottom">
                       <ul uk-accordion="true">
                         <li>
                           <a className="uk-accordion-title" href="#"><i className="uk-text-lead las la-tag"></i><span className="uk-text-top">Code promo ?</span></a>
                           <div className="uk-accordion-content">
                             <form>
                               <div className="uk-margin" uk-margin="true">
-                                <input className="uk-input uk-form-width-large uk-form-large" type="text" placeholder="Ex : FRENCH" onChange={setPromo}/>
+                                <input className="uk-input uk-form-width-large uk-form-large" type="text" placeholder="Ex : FRENCH" onChange={(e) => setDiscount(e)}/>
                               </div>
                             </form>
                           </div>
                         </li>
                       </ul>
                     </div>
-                    <hr />
+                    <hr /> */}
                     <div>
                       <h3 className="uk-card-title">Total (taxes incl.)</h3>
-                      <span className="uk-text-lead">{ total }</span>
+                      <span className="uk-text-lead">{displayTotal().toFixed(2)}</span>
                     </div>
                     <div className="uk-text-left uk-margin-large-top">
                       <a href="/" className="uk-button uk-button-secondary">Procéder au paiement</a>

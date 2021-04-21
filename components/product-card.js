@@ -36,7 +36,6 @@ export default function ProductCard({ product }){
       </Link>
       <div id="product-card-actions" className="uk-text-right">
         <button className="uk-button uk-button-secondary" onClick={() => actions( {type: "addToCard", payload: product, quantity:1} ) }>Ajouter au panier</button>
-        {/* <button className="uk-button uk-button-secondary" onClick={() => actions( {type: "deleteFromCard", payload: product} ) }>Supprimer du panier</button> */}
       </div>
     </div>
   )

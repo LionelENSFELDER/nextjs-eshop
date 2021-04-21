@@ -29,8 +29,8 @@ export default function cartProductCard({product}){
     setInterval(calcProductPrice(), 1000);
   }
 
-  const handleDeleteItem = ()=>{
-    actions({type: "deleteFromCard", payload: product});
+  const handleDeleteItem = () => {
+    actions( { type: "deleteFromCard", payload: product } );
   }
 
   return(
@@ -54,7 +54,6 @@ export default function cartProductCard({product}){
             <div className="">
               €{productPrice}
             </div>
-            {/* <div className=""><span className="">{item.price[$numberDecimal]}</span></div> */}
             <div className="">
               <button className="uk-button uk-button-text uk-button-text-no-border uk-margin-left uk-margin-right" onClick={() => handleMinusOne()}>
                 <i className="las la-minus la-1x"></i>
