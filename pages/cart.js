@@ -59,7 +59,7 @@ export default function CartPage() {
           <NavbarComponent />
         </header>
         <div className="uk-height-medium"></div>
-        <section className="uk-container uk-container-xlarge">
+        <section className="uk-container uk-container-xlarge uk-margin-xlarge-bottom">
           {Array.isArray(cart.products) &&
             <div className="uk-container">
               <div className="uk-grid-large" uk-grid="true">

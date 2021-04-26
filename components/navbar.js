@@ -76,7 +76,7 @@ export default function Navbar(){
                     <Link href="#"><a>CONTACT</a></Link>
                   </li>
 									<li>
-                    <Link href="#"><a>LOGIN</a></Link>
+                    <Link href="/login"><a>LOGIN</a></Link>
                   </li>
                   <li>
                     <Link href="/cart"><a><i className="las la-shopping-cart la-2x"></i>PANIER</a></Link>
