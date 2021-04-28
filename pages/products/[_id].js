@@ -10,7 +10,7 @@ export default function Product({ product }) {
 
   const {cart, actions} = useContext(cartContext);
   const [quantity, setQuantity] = useState(1);
-
+  
 	return (
 		<div>
       <CustomHeadComponent />
@@ -40,7 +40,7 @@ export default function Product({ product }) {
                       </ul>
                     </div>
                       <h1 className="uk-h2 uk-text-bold uk-margin-remove-top">{product.name} {product.type} {product.brand}</h1>
-                      <span className="uk-h2 uk-text-bold uk-margin-medium-bottom uk-padding-remove-top">{product.price["$numberDecimal"]} €</span>
+                      <span className="uk-h2 uk-text-bold uk-margin-medium-bottom uk-padding-remove-top">{product.price} €</span>
                       <p className="uk-margin-medium-bottom">
                         {product.description}<br/>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -150,7 +150,8 @@ export async function getStaticProps({ params }) {
         }
       }
     )
-	const product = JSON.parse(JSON.stringify(data))
+	var product = JSON.parse(JSON.stringify(data));
+  product.price = parseInt(product.price.$numberDecimal);
 
   if(!product){
     return{
