@@ -1,32 +1,23 @@
 import { useContext, createContext } from 'react';
-
 import { connectToDatabase } from '../util/mongodb';
-
 import CustomHeadComponent from '../components/custom-head';
 import NavbarComponent from '../components/navbar';
 import ProductCardComponent from '../components/product-card';
 import SliderComponent from '../components/slider';
 import BlogArticleCardComponent from '../components/blog-article-card';
 import FooterComponent from '../components/footer';
-
 import cartContext from '../contexts/context';
-
 import articlesData from '../util/articles';
 
 export default function Home({ bestSellersProducts, popularProducts }) {
-
   const {cart, actions} = useContext(cartContext);
-
-  // TODO : download and compress sliders images
   const featureSlider = [
-    "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNuZWFrZXJzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format",
-    "https://images.unsplash.com/photo-1529720317453-c8da503f2051?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format",
-    "https://images.unsplash.com/photo-1499237302743-ba2c2740f824?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format",
-    "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format",
-    "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format"
+    "assets/img/home-slider/1.jpg",
+    "assets/img/home-slider/2.jpg",
+    "assets/img/home-slider/3.jpg",
+    "assets/img/home-slider/4.jpg",
+    "assets/img/home-slider/5.jpg",
   ];
-  
-  
   return (
     <div>
       <CustomHeadComponent />

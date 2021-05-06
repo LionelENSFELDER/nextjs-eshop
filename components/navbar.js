@@ -7,7 +7,6 @@ export default function Navbar() {
         <div className="uk-container uk-container-xlarge">
           <div uk-navbar="true">
             <div className="uk-navbar-left uk-text-bolder">
-              {/* TODO : add link tag to all menu links (desktop and mobile) */}
               <ul className="uk-navbar-nav uk-align-left">
                 <Link href="/">
                   <a className="uk-navbar-item uk-logo">

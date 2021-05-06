@@ -78,7 +78,6 @@ export default function CartPage() {
                     </div>
                   </div>
                 </div>
-                {/* TODO : add leader */}
                 <div className="uk-width-1-1 uk-width-2-5@m uk-background-muted uk-height-1-1">
                   <div className="uk-margin-large-top uk-margin-large-bottom uk-margin-large-right">
                     <h3 className="uk-card-title">Sous-total</h3>
