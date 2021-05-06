@@ -87,8 +87,7 @@ export default function Home({ bestSellersProducts, popularProducts }) {
             </div>
 
           </section>
-
-          {/* TODO : create article single page */}
+          
           <section className="uk-container uk-container-xlarge uk-margin-xlarge-bottom">
 
             <h2 className="uk-text-bold">Les Derniers Articles</h2>
@@ -151,17 +150,10 @@ export default function Home({ bestSellersProducts, popularProducts }) {
 }
 
 export async function getServerSideProps(context) {
-
   const { db } = await connectToDatabase();
-
-  // const isConnected = await client.isConnected();
-
   const data = await db.collection('products').find().sort({id: 1}).limit(50).toArray();
-
   const allProducts = data.map(item => {
-
     const price = JSON.parse(item.price)
-
     return {
       _id: item._id,
       name: item.name,
@@ -177,24 +169,15 @@ export async function getServerSideProps(context) {
       pics: item.pics,
       //featuredImage: item.pics[1],
     }
-
   })
   
   if(allProducts !== []){
-
     var allProductsContext = createContext(allProducts);
     var bestSellersProducts = allProducts.slice(0, 4);
     var popularProducts = allProducts.slice(-5);
-
-  }else{
-
-    // TODO : errors and message management
-
   }
 
   return {
-
     props: { allProducts, bestSellersProducts, popularProducts },
-
   }
 }
