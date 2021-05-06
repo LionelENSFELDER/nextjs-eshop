@@ -22,38 +22,36 @@ export default function Navbar(){
 							<div className="uk-navbar-right uk-text-bold">
 
                 {/* mobile menu */}
-                <ul className="uk-navbar-nav uk-align-left uk-hidden@m">
-                  <li>
-                    <a className="uk-navbar-item uk-logo" uk-toggle="target: #offcanvas-slide">
-                      <i className="las la-bars la-3x"></i>
-                    </a>
-                    <div id="offcanvas-slide" uk-offcanvas="overlay: true">
-                      <div className="uk-offcanvas-bar uk-background-default">
-
-                        <a className="uk-align-right" uk-close="true">
-                          <i className="las la-times la-2x"></i>
-                        </a>
-
-                        <ul className="uk-list">
-                          <li><Link href="/"><a>HOME</a></Link></li>
-                          <li><a href="#">A PROPOS</a></li>
-                          <li>
-                            <a href="#" type="button">CATEGORIES</a>
-                            <div uk-dropdown="mode: click">
-                                <ul className="uk-list">
-                                  <li><a href="#">sdfdfdf</a></li>
-                                  <li><a href="#">ssdsds dfdfdf</a></li>
-                                </ul>
-                            </div>
-                          </li>
-                          <li><a href="#">CONTACT</a></li>
-                          <li><Link href="/login"><a><i className="las la-user la-2x"></i>LOGIN</a></Link></li>
-                          <li><Link href="/cart"><a><i className="las la-shopping-cart la-2x"></i>PANIER</a></Link></li>
-                        </ul>
-                      </div>
+                <div className="uk-navbar-nav uk-align-left uk-hidden@m">
+                  <button href="#offcanvas-slide" uk-toggle="target: #offcanvas-slide">
+                    <i className="las la-bars la-3x"></i>
+                  </button>
+                  <div id="offcanvas-slide" uk-offcanvas="true">
+                    <div className="uk-offcanvas-bar uk-background-default">
+                      <button className="uk-offcanvas-close" type="button" uk-close="true"><i className="las la-times la-2x"></i></button>
+                      {/* <button className="uk-align-right uk-text-danger" uk-close="true">
+                        X
+                        <i className="las la-times la-2x"></i>
+                      </button> */}
+                      <ul className="uk-list">
+                        <li><Link href="/"><a>HOME</a></Link></li>
+                        <li><a href="#">A PROPOS</a></li>
+                        <li>
+                          <a href="#" type="button">CATEGORIES</a>
+                          <div uk-dropdown="mode: click">
+                              <ul className="uk-list">
+                                <li><a href="#">sdfdfdf</a></li>
+                                <li><a href="#">ssdsds dfdfdf</a></li>
+                              </ul>
+                          </div>
+                        </li>
+                        <li><a href="#">CONTACT</a></li>
+                        <li><Link href="/login"><a><i className="las la-user la-2x"></i>LOGIN</a></Link></li>
+                        <li><Link href="/cart"><a><i className="las la-shopping-cart la-2x"></i>PANIER</a></Link></li>
+                      </ul>
                     </div>
-                  </li>
-								</ul>
+                  </div>
+								</div>
 
                 {/* desktop menu */}
 								<ul className="uk-navbar-nav uk-visible@m">

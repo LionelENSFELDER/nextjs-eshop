@@ -23,10 +23,17 @@ nav{
 .uk-navbar-nav > li > a{
   color: var(--font-main-color) !important;
 }
+button[href="#offcanvas-slide"]{
+  background-color: transparent;
+  border: none;
+}
 .uk-navbar-container:not(.uk-navbar-transparent){
   background-color: var(--white)!important;
 }
 .uk-offcanvas-bar a{
+  color: var(--dark) !important;
+}
+div .uk-offcanvas-bar > button{
   color: var(--dark) !important;
 }
 .link-add-to-wishlist > .la-plus-circle{
